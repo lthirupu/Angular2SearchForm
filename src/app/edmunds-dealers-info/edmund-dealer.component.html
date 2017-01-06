@@ -1,0 +1,76 @@
+<h1>Car Dealer details</h1>
+
+<div class="ui form error ">
+		<form #f="ngForm" [formGroup] = "edmundsForm"
+        (ngSubmit)="onSubmit(model.value)"
+        class="ui form">	
+        <div class="ui input">
+			<input #model [formControl] = "edmundsForm.controls['name']" 
+        id = "name" class="ui input" type="text" placeholder="Enter the car name..."
+        required>
+        <button type="submit" class="ui blue button" (click) = "clickData()"> Search</button>
+        </div>
+        <div  
+        class = "ui error message " 
+        *ngIf="!name.dirty && name.touched">
+        Car name is required.
+      </div>
+      <div class="ui cards">
+ 
+       <ul><li *ngFor="let item of items">
+          <div class="card">
+             <h3> {{item.dealerName}}</h3>
+              <p> <b>Average Rating: </b>{{item.averageRating}},<br></p>
+              <p><b>Rated By :</b> {{item.consumerName}},<br>
+             <b>Date:</b> {{item.date}},<br>
+             <b> Title: </b>{{item.title}}<br>
+             <b>Review Body:</b>{{item.reviewBody}}<br>
+             <b>Total Rating: </b>{{item.totalRating}}
+             </p>
+              </div>
+         </li></ul>
+   
+  </div>
+		</form>		
+</div>	
+
+<div class="ui divided items">
+  <!--<div class="item">
+  <div style="display: block">
+    <canvas baseChart width="20" height="20"
+            [data]="doughnutChartData"
+              [labels]="doughnutChartLabels"
+              [colors]="colors"
+              [chartType]="doughnutChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"
+              [colors]="[ [204, 0, 0], [230, 230, 0], [0, 153, 51] ]">
+    </canvas>
+  </div>
+  </div>
+
+<div class="item">
+<div style="display: inline-block; vertical-align: baseline">
+    <canvas baseChart width="400" height="400"
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+    </div>
+</div>-->
+    <div class="item">
+    <div class="ui container">
+  <div style="display: block">
+    <canvas baseChart width="20" height="20"
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            >
+    </canvas>
+  </div>
+  </div>
+</div>
+</div>

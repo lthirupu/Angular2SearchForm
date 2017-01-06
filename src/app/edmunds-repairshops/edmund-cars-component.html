@@ -1,0 +1,38 @@
+
+<h1>Car Repair Stores</h1>
+<div class="ui form error ">
+		<form #f="ngForm" [formGroup] = "edmundsForm"
+        (ngSubmit)="onSubmit(model.value)"
+        class="ui form">	
+        <div class="ui input">
+			<input placeholder="Enter the zip code..." #model [formControl] = "edmundsForm.controls['name']" 
+        id = "name" class="ui input" type="text" 
+        required>
+        <button type="submit" class="ui blue button"> Search</button>
+        </div>
+        <div  
+        class = "ui error message " 
+        *ngIf="!name.dirty && name.touched">
+        Car name is required.
+  </div>
+  <div class="ui items">
+  <div class="item">
+       <ul><li *ngFor="let item of items">
+    <h3> {{item.name}}</h3>
+         <p> <b>Address:</b> {{item.address.street}},<br>
+          {{item.address.city}},<br>
+         {{item.address.stateName}},<br>
+          <b>Zip Code:</b> {{item.address.zipcode}}</p>
+          <p><b>Open Timings:</b> <br> Monday:{{item.operations.Monday}}
+          <br> Tuesday   :{{item.operations.Tuesday}}
+          <br> Wednesday :{{item.operations.Wednesday}}
+          <br> Thursday  :{{item.operations.Thursday}}
+          <br> Friday    :{{item.operations.Friday}}
+          <br> Saturday  :{{item.operations.Saturday}}
+          <br> Sunday    :{{item.operations.Sunday}}
+          </p>
+         </li></ul>
+    </div>
+  </div>
+		</form>	
+</div>	

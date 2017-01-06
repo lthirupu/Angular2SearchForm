@@ -1,0 +1,88 @@
+body {
+    margin: 0pt;
+    padding: 0pt;
+    font-family: sans-serif;
+    background-image: url("heart-pattern-067.jpg");
+    /* Android (at least v2.2) needs a webapp to be larger 
+       than the screen in order to hide the address bar. */
+    min-height: 110%;
+}
+h1 {
+    color: white;
+    background: #DC143C;
+    text-shadow: 0pt 2pt 2pt #DC143C;
+    font-size: 18pt;
+    font-weight: bold;
+    padding: 10pt;
+    text-align: center;
+    /* Sigh, cross-browser gradients... */
+    background-image: -moz-linear-gradient(top, #DC143C, #F08080);
+    background-image: -ie-linear-gradient(top, #DC143C, #F08080);
+    background-image: -webkit-linear-gradient(top, #DC143C, #F08080);
+    background-image: linear-gradient(top, #DC143C, #F08080);
+    /* Sigh, cross-browser drop shadows */
+    -moz-box-shadow: 0pt 3pt 3pt #888;
+    -webkit-box-shadow: 0pt 3pt 3pt #888;
+    box-shadow: 0pt 3pt 3pt #888;
+}
+button {
+    display: inline-block;
+    min-height: 1em;
+    width: 100%;
+    vertical-align: baseline;
+    background-color:	#cc3333;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 1em;
+    font-style: normal;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10pc
+  
+}
+div{
+    font-size: 14pt;
+    text-align: left;
+    width: 550pt
+}
+/*input .ng-touched.ng-errors{
+    border: 1px solid red;
+}*/
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.error {
+      color: #CC0000;
+      font-style: italic;
+      font-weight: bold;
+      background-color: #ffeb99;
+      border: 0.5px red;
+    }
+input ng-errors{
+    border: 1px solid red;
+}
+a:link, a:visited {
+    background-color: #cce6ff;
+    color: black;
+    padding: 14px 25px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background-color: #4da6ff;
+}

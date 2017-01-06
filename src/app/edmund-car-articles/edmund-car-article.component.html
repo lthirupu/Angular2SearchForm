@@ -1,0 +1,26 @@
+<h1>Articles about cars</h1>
+<div class="ui form error ">
+		<form #f="ngForm" [formGroup] = "edmundsForm"
+        (ngSubmit)="onSubmit(model.value)"
+        class="ui form">	
+        <div class="ui input">
+			<input #model [formControl] = "edmundsForm.controls['name']" 
+        id = "name" class="ui input" type="text" placeholder="Enter the car name..."
+        required>
+        <button type="submit" class="ui blue button"> Search</button>
+        </div>
+        <div  
+        class = "ui error message " 
+        *ngIf="!name.dirty && name.touched">
+        Car name is required.
+      </div>
+		</form>		
+</div>	
+
+<div class="ui padding container" *ngFor="let photo of photos">
+ <h3> Article Title: {{photo.title}}</h3>
+              <p> <b>Description: </b>{{photo.description}},<br></p>
+              <b>Body :</b> {{photo.body}},<br>
+             Link: <a href= "{{photo.link.href}}">{{photo.link.href}}</a>
+  <!--<img src= '{{'http://media.ed.edmunds-media.com'+photo.link.href}}'>-->
+</div>

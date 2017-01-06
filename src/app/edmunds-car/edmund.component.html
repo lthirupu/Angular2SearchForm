@@ -1,0 +1,51 @@
+<h1>Models of a car</h1>
+<div class="ui form">
+		<form #f="ngForm" [formGroup] = "edmundsForm"
+        (ngSubmit)="onSubmit(model.value)"
+        class="ui form">	
+        <div class="ui input">
+			<input #model [formControl] = "edmundsForm.controls['name']" 
+        id = "name" class="ui input" type="text" placeholder="Enter a valid car name"
+        required>
+        <button type="submit" class="ui blue button" (click) = "clickData()"> Search</button>
+        </div>
+        <div  
+        class = "ui error message " 
+        *ngIf="!name.dirty && name.touched">
+        Car name is required.
+      </div>
+		</form>		
+</div>	
+
+<!--<div class="ui padding container" >
+  <img src="{{'http://media.ed.edmunds-media.com'+photos[1].link.href }}">
+  
+</div>-->
+<img src= "{{'http://media.ed.edmunds-media.com'+pic}}">
+<h3>  {{title}}</h3>
+<p> {{des}}<br></p>
+<p> {{body}}<br></p>
+<a href= "{{link}}">{{link}}</a>
+
+<!--<div class="ui padding container" *ngFor="let detail of details || async">
+ <h3>  Title: {{detail.title}}</h3>
+              <p> <b>Description: </b>{{detail.description}},<br></p>
+              <b>Body :</b> {{detail.introduction}},<br>
+             Link: <a href= "{{detail.link.href}}">{{detail.link.href}}</a>
+ <img src= '{{'http://media.ed.edmunds-media.com'+photo.link.href}}'>
+</div>-->
+
+<div class="ui divided items">
+    <div class="item">
+    <div class="ui container">
+  <div style="display: block">
+    <canvas baseChart width="20" height="20"
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            >
+    </canvas>
+  </div>
+  </div>
+</div>
+</div>
